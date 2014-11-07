@@ -57,11 +57,12 @@ def match(input, key):
 	next_search_pos = 0
 	new_key = key
 	for char in input:
-		next_search_pos = key.find(char, next_search_pos)
-		if next_search_pos == -1:
+		pos = key.find(char, next_search_pos)
+		if pos == -1:
 			return (False, new_key)
 		else:
-			new_key = get_replaced_char_string(next_search_pos, new_key, key[next_search_pos].upper())
+			new_key = get_replaced_char_string(pos, new_key, key[pos].upper())
+			next_search_pos = pos + 1
 	return (True, new_key)
 
 def get_replaced_char_string(pos, string, char):
