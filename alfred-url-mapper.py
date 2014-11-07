@@ -19,8 +19,11 @@ def main():
 
 	alp_entries = []
 	for key in commands:
-		if match(input, key):
-			add_alp_entry(alp_entries, commands[key])
+		(matches, new_key) = match(input, key)
+		command_entry = commands[key]
+		command_entry.key = new_key
+		if matches:
+			add_alp_entry(alp_entries, command_entry)
 	
 	# Add code to search for entered key and create the alp entries with add_alp_entry
 	alp.feedback(alp_entries)
@@ -52,11 +55,19 @@ def convert_entry(key, configuration):
 
 def match(input, key):
 	next_search_pos = 0
+	new_key = key
 	for char in input:
 		next_search_pos = key.find(char, next_search_pos)
 		if next_search_pos == -1:
-			return False
-	return True
+			return (False, new_key)
+		else:
+			new_key = get_replaced_char_string(next_search_pos, new_key, key[next_search_pos].upper())
+	return (True, new_key)
+
+def get_replaced_char_string(pos, string, char):
+	new = list(string)
+	new[pos] = char
+	return ''.join(new)
 
 class Entry:
 	def __init__(self, key, name, subname, url):
