@@ -1,0 +1,17 @@
+se:
+  name: Search engines...
+  subentries:
+    google:
+      name: Open Google...
+      subname: Basically the most popular search engine
+      url: https://www.google.com
+    yahoo:
+      name: Open Yahoo...
+      url: http://www.yahoo.com
+    bing:
+      name: Open Bing... 
+      url: http://www.bing.com
+github:
+  name: Open Github...
+  subname: For lots of source code
+  url: http://www.github.com
