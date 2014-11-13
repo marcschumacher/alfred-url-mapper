@@ -8,6 +8,8 @@ se:
     yahoo:
       name: Open Yahoo...
       url: http://www.yahoo.com
+      parameter: [q]
+      url_prepend_string: "?#"
     bing:
       name: Open Bing... 
       url: http://www.bing.com

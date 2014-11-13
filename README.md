@@ -14,7 +14,7 @@ Create a new shortcut with following configuration:
 1. "Please wait" subtext: "Loading shortcuts..."
 1. Language: "/bin/bash"
 1. Escaping (activate the following): Backquotes, Double Quotes
-1. Script: "<path to script>/alfred-url-mapper.py {query}"
+1. Script: "<path to script>/alfred-url-mapper.py "{query}"" (don't forget the quotes around {query}, remove the outer quotes)
 
 ## Configuration
 Make sure that you create a configuration file in the same directory as the script.
